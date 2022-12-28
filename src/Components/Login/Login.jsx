@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Login/Login.css"
 import { useNavigate } from 'react-router-dom';
 import Forgot from '../Forgot/Forgot';
+import Header from '../header/header';
 function Login() {
   const navigate=useNavigate();
   const signup=()=>{
