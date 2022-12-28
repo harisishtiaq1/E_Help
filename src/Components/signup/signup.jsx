@@ -1,8 +1,13 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../Login.css";
-
+import "../Login/Login.css";
+import { useNavigate } from 'react-router-dom';
 function Signup() {
+    const nevigate=useNavigate();
+    const login=()=>{
+        let path="/";
+        nevigate(path);
+      }
     return (
         <div className="container-fluid">
             <div className="sigin-wrap">
@@ -43,7 +48,7 @@ function Signup() {
                         Sign up With Google
                         </button>
                         <div className="text-center">
-                            <span>Already have an account? <a href="">Login</a></span>
+                            <span>Already have an account? <a onClick={()=>login()} href="">Login</a></span>
                         </div>
                     </form>
                 </div>

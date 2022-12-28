@@ -1,22 +1,19 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route,Routes,BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Login from './Components/Login';
+import Login from './Components/Login/Login';
 import Signup from './Components/signup/signup';
+import Forgot from "./Components/Forgot/Forgot";
 
 function App() {
   return (
-    // <div className="App">
-    // <Login/>
-    // </div>
-    <>
-    <Router>
+    <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Login />}/>
-      <Route path="/Signup" element={<Signup />}/>
+      <Route path="/" exact={true} element={<Login />}/>
+      <Route path="/Signup" exact={true} element={<Signup />}/>
+      <Route path="/Forgot" exact={true} element={<Forgot/>}/>
+      <Route path='/' exact={true} element={<Forgot/>}/>
     </Routes>
-    </Router>
-    </>
+    </BrowserRouter>
   );
 }
-
 export default App;
