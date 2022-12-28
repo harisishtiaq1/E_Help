@@ -1,7 +1,18 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Login.css"
+import "../Login/Login.css"
+import { useNavigate } from 'react-router-dom';
+import Forgot from '../Forgot/Forgot';
 function Login() {
+  const navigate=useNavigate();
+  const signup=()=>{
+    let path="/signup"
+    navigate(path);
+  }
+  const forget=()=>{
+    let path="/Forgot";
+    navigate(path);
+  }
   return (
     <div className="container-fluid">
       <div className="sigin-wrap">
@@ -26,7 +37,7 @@ function Login() {
               />
             </div>
             <div className="d-flex justify-content-end mb-3">
-              <a href="">Forgot Password?</a>
+              <a  onClick={()=>forget()}   href="">Forgot Password?</a>
             </div>
             <button type="submit" className="btn mb-3" id="signin-btn">
               Sign In
@@ -35,7 +46,7 @@ function Login() {
               Sign in With Google
             </button>
             <div className="text-center">
-              <span>New User? <a href="signup.html">Create Account</a></span>
+              <span>   New User? <a onClick={()=>signup()}href="">Create Account</a></span>
             </div>
           </form>
         </div>
